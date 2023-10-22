@@ -1,0 +1,20 @@
+name: Deploy GitHub Artefacts
+
+on:
+  workflow_run:
+    workflows:
+      - Create release artefacts
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    environment: production
+    concurrency: production
+
+    steps:
+      - name: Post to webhook
+        run: curl --fail-with-body -X POST ${{ format('https://deployer.taservers.com/v2/repositories/{0}/workflow-runs/{1}/pull-artefacts', github.event.repository.name, github.event.workflow_run.id) }}

@@ -1,0 +1,24 @@
+name: Create release artefacts
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload artefact
+        uses: actions/upload-artifact@v3
+        with:
+          name: lua
+          path: ./lua
+          retention-days: 1
+          if-no-files-found: "error"
