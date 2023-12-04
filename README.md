@@ -1,6 +1,5 @@
 # ulx-custom-commands
-Custom Commands for Garry's Mod Servers
-
+A fork from the original Ulx Custom Commands, it has been modified to follow Tas needs therefore most of the unnecessary things have been removed, if there's any issue or you need help with contributing, please create an issue or a post in discussions.
 ## Information
 Custom ULX commands was an addon that was first uploaded to the Ulyssesmod.net forums on May 8th, 2014, by a user named Cobalt. The owner has since become inactive on the project, and it grew outdated as time went on. Server owners on Garry's Mod were fond of the addon, so we decided to maintain the code, fix it up, and breathe some new life into it.
 
